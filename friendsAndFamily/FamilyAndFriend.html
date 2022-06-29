@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>FriendsAndFamily</title>
+        <script src="js/FamilyAndFriends.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="central">
+            <b>Relation: </b><select id="Sel" onchange="drpJSON()"><option value="0">--</option></select><br>
+            <b>or Name Lookup: </b><input type="text" name="NameSearch" id="NameSearch" onkeyup="searchJSON()" placeholder="Name Lookup">
+            <input type="button" onclick="searchJSON()" value="Pick">
+        </div>
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>First</th>
+                        <th>Last</th>
+                        <th>Relation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div id="Name"></div></td>
+                        <td><div id="LName"></div></td>
+                        <td><div id="Relation"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            var data_file = "js/FriendsAndFamily.json";
+            var http_request = new XMLHttpRequest();
+
+            try {
+                // Opera 8.0+, Firefox, Chrome, Safari
+                http_request = new XMLHttpRequest();
+
+            } catch (e) {
+                // Internet Explorer Browsers
+                try {
+                    http_request = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    try {
+                        http_request = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e) {
+                        // Something went wrong
+                        alert("Your browser broke!");
+                    }
+                }
+            }
+            http_request.onreadystatechange = function () {
+                if (http_request.readyState == 4) {
+                    // Javascript function JSON.parse to parse JSON data
+                    var jsonObj = JSON.parse(http_request.responseText);
+                    var text = "<option value='0'>--</option>";
+                    for (var i = 0; i < jsonObj.people.length; i++) {
+                       text = text + "<option>" + jsonObj.people[i].relation + "</option>";
+                    }
+                    document.getElementById("Sel").innerHTML = text;
+                }
+            }
+            http_request.open("GET", data_file, true);
+            http_request.send();
+        </script>
+    </body>
+</html>

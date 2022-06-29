@@ -1,0 +1,32 @@
+{
+    "people":[{
+            "name":"Ron",
+            "lname":"Schroeder",
+            "relation":"Father"
+        },
+        {
+            "name":"Jenn",
+            "lname":"Perry",
+            "relation":"Mother"
+        },
+        {
+            "name":"Ron",
+            "lname":"Schroeder",
+            "relation":"Grandfather"
+        },
+        {
+            "name":"Mike",
+            "lname":"Perry",
+            "relation":"Step-Father"
+        },
+        {
+            "name":"Pamela",
+            "lname":"Bartlett",
+            "relation":"Grandmother"            
+        },
+        {
+            "name":"Roy",
+            "lname":"Bartlett",
+            "relation":"Grandfather"            
+        }]
+}

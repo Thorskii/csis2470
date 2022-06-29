@@ -1,0 +1,12 @@
+{
+    "me": [
+        {
+            "name": "Austin",
+            "age": 21,
+            "married": false,
+            "classes": ["ECON1010","CSIS2440","CSIS2470","HIST1010"],
+            "hobbies": {"name":"Travel", "description":"I love to travel the world!"}
+
+        }
+    ]
+}

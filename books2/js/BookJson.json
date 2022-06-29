@@ -1,0 +1,32 @@
+{
+    "book": [
+        {
+            "authorid": 1,
+            "Author": "Jules Verne",
+            "Title": "A Journey to the Center of the Earth",
+            "Description": "Famous adventure tale that practically launched the genre in 1864",
+            "Year": 1864
+        },
+        {
+            "authorid": 2,
+            "Author": "H.G. Wells",
+            "Title": "The War of the Worlds",
+            "Description": "The Martians come to England. A famous example of invansion literature from 1898",
+            "Year": 1898
+        },
+        {
+            "authorid": 3,
+            "Author": "Aldous Huxley",
+            "Title": "Brave New World",
+            "Description": "Set in 2540, this novel imagines a radically different future. So good, it's taught in schools.",
+            "Year": 1932
+        },
+        {
+            "authorid": 4,
+            "Author": "Edwin Balmer & Philip Wylie",
+            "Title": "When Worlds Collide",
+            "Description": "Earth must be evacuated because another planet is on a collision course",
+            "Year": 1933
+        }
+    ]
+}

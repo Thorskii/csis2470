@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script>
+            var data = {"Adventure": 
+                [
+                    {
+                        "place": "Who is the antagonist of Tom and Jerry?",
+                        "option1" : {
+                            "text": "Tom",
+                            "value": 1},
+                        "option2": {
+                            "text": "Jerry",
+                            "value": 0},
+                        "image":"<img src='img/img1.png'>",
+                        "numOpt": 2,
+                        Options:[{"crust":"Deep Dish", "Price": 1.99}, {"crust":"Thin Crust", "Price":.99}]
+
+                    },
+                    {
+                        "place": "How many toes does the average person have?",
+                        "option1" : {
+                            "text": "9",
+                            "value": 0},
+                        "option2": {
+                            "text": "10",
+                            "value": 1},
+                    },
+                    {
+                        "place": "Fill in the blank: you chew with your _____",
+                        "option1" : {
+                            "text": "toes",
+                            "value": 0},
+                        "option2": {
+                            "text": "teeth",
+                            "value": 1},
+                    },
+                    {
+                        "place": "How many syllables are in JavaScript",
+                        "option1" : {
+                            "text": "3",
+                            "value": 1},
+                        "option2": {
+                            "text": "4",
+                            "value": 0},
+                    }
+                    ,                    {
+                        "place": "What is my name?",
+                        "option1" : {
+                            "text": "Austin",
+                            "value": 1},
+                        "option2": {
+                            "text": "Darth Vader",
+                            "value": 0},
+                    }
+                ]
+            }
+
+            var points = 0;
+            var question = 0;
+            function quizOn(choice) {
+                points = points + parseInt(choice);
+
+                if (question < 5) {
+                    document.getElementById("placeholder").innerHTML = "<form><p>" + data.Adventure[question].place + "</p><p>"
+                        + "<input type=\"radio\" value= " + data.Adventure[question].option1.value + " onchange=\"quizOn(this.value)\">"
+                        + data.Adventure[question].option1.text
+                        + "<br><input type=\"radio\" value= " + data.Adventure[question].option2.value + " onchange=\"quizOn(this.value)\">"
+                        + data.Adventure[question].option2.text + "</form><p> You scored " + points + "/5";
+                } else {
+                    document.getElementById("placeholder").innerHTML = "<p>You completed the exam!</p><br><p> You scored " + points + "/5";
+                } question++;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <h2>Quiz</h2>
+        </div>
+        <div class="wrapper row2">
+            <div id="container" class="clear">
+                <div id="placeholder" class="section">
+                    <form>
+                        <p>General Quiz!</p>
+                        <p>
+                            <input type="radio" value="0" onchange="quizOn(this.value)">Click to start
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
